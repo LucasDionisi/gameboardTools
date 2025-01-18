@@ -1,13 +1,18 @@
 local font = {}
 
-function font.manageFont(screenWidth, screenHeight)
-    local fontSize = math.min(screenWidth, screenHeight) * 0.05 -- fontSize is 5% of screenMin
-    font.createFont(fontSize)
+local mainFont, boldFont
+
+function font.manageFontSize(screenWidth, screenHeight)
+    mainFont = love.graphics.newFont('resources/fonts/FjallaOne-Regular.ttf', math.min(screenWidth, screenHeight) * 0.05)
+    boldFont = love.graphics.newFont('resources/fonts/FjallaOne-Regular.ttf', math.min(screenWidth, screenHeight) * 0.08)
 end
 
-function font.createFont(fontSize)
-    local newFont = love.graphics.newFont(fontSize)
-    love.graphics.setFont(newFont)
+function font.useMainFont()
+    love.graphics.setFont(mainFont)
+end
+
+function font.useBoldFont()
+    love.graphics.setFont(boldFont)
 end
 
 return font

@@ -1,5 +1,4 @@
 local menu = require('src.ui.menu')
-local font = require('src.config.font')
 
 local screenWidth, screenHeight
 
@@ -9,7 +8,7 @@ end
 
 function love.load()
     getDimensions()
-    font.manageFont(screenWidth, screenHeight)
+    love.graphics.setBackgroundColor(245/255, 219/255, 181/255)
 end
 
 function love.draw()
@@ -18,5 +17,4 @@ end
 
 function love.resize()
     getDimensions()
-    font.manageFont(screenWidth, screenHeight)
 end
